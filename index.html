@@ -10,83 +10,163 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <style>
         
             .roboto-regular {
               font-family: "Roboto", sans-serif;
               font-optical-sizing: auto;
               font-weight: 500;
+              font-style: normal;          
+            }
+            .bebas-neue {
+              font-family: "Bebas Neue", sans-serif;
+              font-weight: 400;
               font-style: normal;
-}
+            }
+
+            
+            
+
     </style>
 
 </head>
-<body>
+<body class=" flex flex-col items-center roboto-regular">
     <!-- Starting of the header section -->
-    <header class="bg-[#FFFBF0]">
-        <!-- Starting of Nav bar  -->
-<nav>
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
-        <button type="button"  onclick="mobileMenu()" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="absolute -inset-0.5"></span>
-          <span class="sr-only">Open main menu</span>
-          <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-
-          <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start ">
-
-          <img class="h-8 w-auto" src="icons/logo.png" alt="Your Company">
-
-
-      </div>
-      <!-- Menu Items for lg devices -->
-      <div>
-
-        <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 roboto-regular hover:text-white" aria-current="page">Home</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700  roboto-regular hover:text-white">Product</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 roboto-regular hover:text-white">About us</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700  roboto-regular hover:text-white">Contact us</a>
-            </div>
+    <header class="bg-[#FFFBF0] w-[100%] h-[750px]">
+             <!-- Starting of Nav bar  -->
+     <nav>
+       <div class="mx-auto lg:w-[75%] w-full px-2 sm:px-6 lg:px-8">
+         <div class="relative flex h-16 items-center justify-between">
+           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+             <!-- Mobile menu button-->
+             <button type="button"  onclick="mobileMenu()" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+               <span class="absolute -inset-0.5"></span>
+               <span class="sr-only">Open main menu</span>
+               <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+               </svg>
+     
+               <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+               </svg>
+             </button>
+           </div>
+           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start ">
+     
+               <img class="h-8 w-auto" src="icons/logo.png" alt="Your Company">
+           </div>
+           <!-- Menu Items for lg devices -->
+           <div>
+     
+             <div class="hidden sm:ml-6 sm:block">
+                 <div class="flex space-x-4">
+                   <a href="#" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 roboto-regular hover:text-white" aria-current="page">Home</a>
+                   <a href="#" class="rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700  roboto-regular hover:text-white">Product</a>
+                   <a href="#" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 roboto-regular hover:text-white">About us</a>
+                   <a href="#" class="rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700  roboto-regular hover:text-white">Contact us</a>
+                 </div>
+               </div>
+     
+     
+             </div>
+           </div>
+         </div>
+       </div>
+     
+       <!-- Mobile menu, show/hide based on menu state. -->
+       <div class="absolute hidden" id="dropDownDiv">
+         <div class="space-y-1 px-2 pt-2 pb-3">
+           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+           <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular hover:text-white"  aria-current="page">Home</a>
+           <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular  hover:text-white">Product</a>
+           <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular hover:text-white">About us</a>
+           <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular  hover:text-white">Contact us</a>
+         </div>
+       </div>
+     </nav>
+<!--    Ending of Menu  -->
+    <!-- Header -->
+     <div id="header-container" class="  mx-auto lg:w-[75%] px-2 sm:px-6 lg:px-8        flex lg:flex-row lg:justify-between     md:flex md:flex-row      
+     flex-col  items-center">
+          <!-- header left part -->
+          <div>
+             <h1 class="text-[60px] lg:text-[80px] md:text-[50px] bebas-neue"><span class="text-[#FABE4C] block">Be the Penguins<br></span>
+              <span class="block mt-[-15px]">of Winter</span> </h1>
+              <p class="text-[#3E3E3E] text-[16px] font-[400] mt-[-15px]">Lorem Ipsum is simply dummy text of the printing<br> 
+                and typesetting industry.</p>
+                <button class="flex items-center justify-center bg-linear-to-r from-[#A4BC46]  to-[#85A019] h-[60px] w-[170px] text-[16px] text-white rounded-md mt-[8px]" > <img src="icons/shopping-cart 1.png" alt="" class="h-[24px] w-[24px]">BUY NOW</button>
           </div>
+          <!-- header right part -->
+           <div>
+            <img src="images/model.png" alt="" class="lg:mr-[110px]">
+           </div>
 
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="hidden" id="dropDownDiv">
-    <div class="space-y-1 px-2 pt-2 pb-3">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular hover:text-white"  aria-current="page">Home</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular  hover:text-white">Product</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular hover:text-white">About us</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium roboto-regular  hover:text-white">Contact us</a>
-    </div>
-  </div>
-</nav>
-
-
-
+     </div>
     </header>
-    <main>
+    <!-- Starting of the main part -->
+     <main class=" mx-auto lg:w-[75%] px-2 sm:px-6 lg:px-8">
+         <!-- women Jackets -->
+         <section id="Container-women-jacket">
 
-    </main>
-    <footer>
+            <h1 class="bebas-neue lg:text-[48px] lg:text-left md:text-[44px] md:text-left text-[36px] text-center">WOMEN JACKET</h1>
 
-    </footer>
+            <div class="grid grid-cols-3 gap-2">
+              <div>
+                <img src="images/jacket-1.png" alt="">
+                <h5>Yellow Coat Jacket</h5>
+                <p> Lorem Ipsum is simply dummy text of the 
+                  printing and typesetting industry. </p>
+                <div>
+                  <p>$234</p>
+                  <button class="flex items-center justify-center bg-linear-to-r from-[#A4BC46]  to-[#85A019] h-[60px] w-[170px] text-[16px] text-white rounded-md mt-[8px]" > <img src="icons/shopping-cart 1.png" alt="" class="h-[24px] w-[24px]">BUY NOW</button>
+                </div>
+              </div>
+              <div>
+                <img src="images/jacket-1.png" alt="">
+                <h5>Yellow Coat Jacket</h5>
+                <p> Lorem Ipsum is simply dummy text of the 
+                  printing and typesetting industry. </p>
+                <div>
+                  <p>$234</p>
+                  <button class="flex items-center justify-center bg-linear-to-r from-[#A4BC46]  to-[#85A019] h-[60px] w-[170px] text-[16px] text-white rounded-md mt-[8px]" > <img src="icons/shopping-cart 1.png" alt="" class="h-[24px] w-[24px]">BUY NOW</button>
+                </div>
+              </div>
+              <div>
+                <img src="images/jacket-1.png" alt="">
+                <h5>Yellow Coat Jacket</h5>
+                <p> Lorem Ipsum is simply dummy text of the 
+                  printing and typesetting industry. </p>
+                <div>
+                  <p>$234</p>
+                  <button class="flex items-center justify-center bg-linear-to-r from-[#A4BC46]  to-[#85A019] h-[60px] w-[170px] text-[16px] text-white rounded-md mt-[8px]" > <img src="icons/shopping-cart 1.png" alt="" class="h-[24px] w-[24px]">BUY NOW</button>
+                </div>
+              </div>
+            </div>
+
+         </section>
+
+     </main>
+     <footer>
+
+     </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- short js for functionality  -->
     <script>
         // function to control the drop down menu in mobile devices
